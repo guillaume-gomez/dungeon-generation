@@ -1584,7 +1584,7 @@ PrefabInstance:
     - target: {fileID: 2039873803851056758, guid: 5e65cb2208775d847861617d6a28a869,
         type: 3}
       propertyPath: m_Name
-      value: SpawnPoint
+      value: SpawnPointTop
       objectReference: {fileID: 0}
     - target: {fileID: 8373904101186563054, guid: 5e65cb2208775d847861617d6a28a869,
         type: 3}
@@ -1640,6 +1640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914056804106626524, guid: 5e65cb2208775d847861617d6a28a869,
+        type: 3}
+      propertyPath: openingDirection
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e65cb2208775d847861617d6a28a869, type: 3}
