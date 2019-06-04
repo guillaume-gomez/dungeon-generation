@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 3746492478971425555}
   m_Layer: 0
   m_Name: B
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -813,7 +813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9191968115453908454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.75, y: 4.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6914114922655274858}
@@ -1514,12 +1514,12 @@ PrefabInstance:
     - target: {fileID: 8373904101186563054, guid: 5e65cb2208775d847861617d6a28a869,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8373904101186563054, guid: 5e65cb2208775d847861617d6a28a869,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.65
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8373904101186563054, guid: 5e65cb2208775d847861617d6a28a869,
         type: 3}
@@ -1721,12 +1721,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 519998543885843806, guid: 7ff439c9678d69b45aca2cb8e589a48a,
+    - target: {fileID: 234555646305821744, guid: 7ff439c9678d69b45aca2cb8e589a48a,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 234555646305821744, guid: 7ff439c9678d69b45aca2cb8e589a48a,
+    - target: {fileID: 519998543885843806, guid: 7ff439c9678d69b45aca2cb8e589a48a,
         type: 3}
       propertyPath: m_IsActive
       value: 0
