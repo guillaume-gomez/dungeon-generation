@@ -6,7 +6,9 @@ public class Destroyer : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-      Debug.Log("jjjjjjjj");
-      Destroy(other.gameObject);
+      if(other.name == "SpawnPointClosedRoom") {
+        // destroy closed room when set in entry room
+        Destroy(other.gameObject.transform.parent.gameObject);
+      }
     }
 }
