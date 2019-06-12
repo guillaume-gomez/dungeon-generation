@@ -1,1 +1,1 @@
-# dungeon-generation
+# dungeon-generator
