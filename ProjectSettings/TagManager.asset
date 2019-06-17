@@ -7,6 +7,9 @@ TagManager:
   - Blocks
   - SpawnPoint
   - Rooms
+  - Room
+  - SpawnPointDestroyer
+  - Boss
   layers:
   - Default
   - TransparentFX
