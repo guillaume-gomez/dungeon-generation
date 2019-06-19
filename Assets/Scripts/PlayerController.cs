@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   public float speed;
+  private float moveLimiter = 0.7f;
 
   private Rigidbody2D rb;
-  private Vector2 moveVelocity;
+  private float horizontal;
+  private float vertical;
 
   void Start()
   {
@@ -16,12 +18,16 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
-    Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-    moveVelocity = moveInput.normalized * speed;
+    horizontal = Input.GetAxis("Horizontal");
+    vertical = Input.GetAxis("Vertical");
   }
 
   void FixedUpdate()
   {
-    rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+    if(horizontal != 0 && vertical != 0) {
+      horizontal *= moveLimiter;
+      vertical *= moveLimiter;
+    }
+    rb.velocity = new Vector2(horizontal * speed, vertical * speed);
   }
 }
