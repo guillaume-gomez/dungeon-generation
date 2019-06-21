@@ -11,16 +11,27 @@ public class RoomSpawner : MonoBehaviour
     // 4 right door
 
     private RoomTemplates templates;
+    private RoomScript roomScript;
     private int rand;
     private bool spawned = false;
 
     void Start() {
+      roomScript = gameObject.transform.parent.gameObject.GetComponent<RoomScript>();
       templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
       Invoke("Spawn", templates.waitTime % 0.25f);
       //Destroy(gameObject, templates.waitTime * 2.0f);
     }
 
-    void Spawn()
+    public void Unspawn() {
+      spawned = false;
+    }
+
+    public void Restart() {
+      Unspawn();
+      Spawn();
+    }
+
+    private void Spawn()
     {
       if(spawned) {
         return;
@@ -62,6 +73,11 @@ public class RoomSpawner : MonoBehaviour
   private void instanciateRoom(GameObject[] rooms) {
     rand = Random.Range(0, rooms.Length);
     GameObject room = rooms[rand];
-    Instantiate(room, transform.position, room.transform.rotation);
+    GameObject childRoom = Instantiate(room, transform.position, room.transform.rotation);
+
+    // room is not the final room of a path
+    RoomScript childRoomScript = childRoom.GetComponent<RoomScript>();
+    GameObject parent = gameObject.transform.parent.gameObject;
+    childRoomScript.AddParent(parent);
   }
 }
