@@ -11,11 +11,12 @@ public class RoomTemplates : MonoBehaviour
 
   public GameObject closedRoom;
 
-  public List<GameObject> rooms;
-
   public float waitTime = 2.0f;
-  private bool spawnedBoss;
   public GameObject boss;
+  public float nbMinimalRoom = 5;
+
+  public List<GameObject> rooms;
+  private bool spawnedBoss;
 
 
   void Update() {
@@ -25,6 +26,17 @@ public class RoomTemplates : MonoBehaviour
       spawnedBoss = true;
     } else {
       waitTime -= Time.deltaTime;
+    }
+  }
+
+  void DestroyRoomAndRestart() {
+    for (int i = 0; i < rooms.Count; i++) {
+      RoomScript roomScript = rooms[i].GetComponent<RoomScript>();
+      if(roomScript.HasParent()) {
+        // destroy room
+        roomScript.Remove();
+        return;
+      }
     }
   }
 
