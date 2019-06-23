@@ -11,7 +11,7 @@ public class RoomTemplates : MonoBehaviour
 
   public GameObject closedRoom;
 
-  public float waitTime = 2.0f;
+  public float waitTime = 10.0f;
   public GameObject boss;
   public float nbMinimalRoom = 5;
 
@@ -21,9 +21,15 @@ public class RoomTemplates : MonoBehaviour
 
   void Update() {
     if(waitTime <= 0 && spawnedBoss == false) {
-      GameObject lastRoom = rooms[rooms.Count - 1];
-      Instantiate(boss, lastRoom.transform.position, Quaternion.identity);
-      spawnedBoss = true;
+      //check if the maze fit the number of rooms
+      if (rooms.Count > nbMinimalRoom) {
+        GameObject lastRoom = rooms[rooms.Count - 1];
+        Instantiate(boss, lastRoom.transform.position, Quaternion.identity);
+        spawnedBoss = true;
+      } else {
+        DestroyRoomAndRestart();
+        waitTime = 10.0f;
+      }
     } else {
       waitTime -= Time.deltaTime;
     }
@@ -32,9 +38,12 @@ public class RoomTemplates : MonoBehaviour
   void DestroyRoomAndRestart() {
     for (int i = 0; i < rooms.Count; i++) {
       RoomScript roomScript = rooms[i].GetComponent<RoomScript>();
-      if(roomScript.HasParent()) {
+      if(!roomScript.HasChildren()) {
         // destroy room
         roomScript.Remove();
+        Debug.Break();
+        Destroy(rooms[i].gameObject);
+        rooms.Remove(rooms[i]);
         return;
       }
     }
