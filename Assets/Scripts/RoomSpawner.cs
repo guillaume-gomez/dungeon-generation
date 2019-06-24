@@ -79,5 +79,8 @@ public class RoomSpawner : MonoBehaviour
     RoomScript childRoomScript = childRoom.GetComponent<RoomScript>();
     GameObject parent = gameObject.transform.parent.gameObject;
     childRoomScript.AddParent(parent);
+
+    RoomScript parentRoomScript = parent.GetComponent<RoomScript>();
+    parentRoomScript.AddChild(childRoom);
   }
 }
