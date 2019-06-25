@@ -376,6 +376,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4393198749873812356, guid: b0eb5bb5ff394fe49919f9aa60f8c695,
         type: 3}
+    - target: {fileID: 1957765246433132772, guid: 7d80c7a10064a12429226283ec389873,
+        type: 3}
+      propertyPath: nbMinimalRoom
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d80c7a10064a12429226283ec389873, type: 3}
 --- !u!1001 &5241940072708167676
