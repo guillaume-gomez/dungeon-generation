@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 1957765246433132772, guid: 7d80c7a10064a12429226283ec389873,
         type: 3}
       propertyPath: nbMinimalRoom
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d80c7a10064a12429226283ec389873, type: 3}
