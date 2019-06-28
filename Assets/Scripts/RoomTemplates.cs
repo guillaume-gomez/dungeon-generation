@@ -41,7 +41,7 @@ public class RoomTemplates : MonoBehaviour
       if(!roomScript.HasChildren()) {
         // destroy room
         roomScript.Remove();
-        Debug.Break();
+        //Debug.Break();
         Destroy(rooms[i].gameObject);
         rooms.Remove(rooms[i]);
         return;
