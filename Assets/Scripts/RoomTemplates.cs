@@ -26,9 +26,9 @@ public class RoomTemplates : MonoBehaviour
         GameObject lastRoom = rooms[rooms.Count - 1];
         Instantiate(boss, lastRoom.transform.position, Quaternion.identity);
         spawnedBoss = true;
-      } else {
-        DestroyRoomAndRestart();
-        waitTime = 10.0f;
+      //} else {
+        //DestroyRoomAndRestart();
+        //waitTime = 10.0f;
       }
     } else {
       waitTime -= Time.deltaTime;
@@ -36,12 +36,13 @@ public class RoomTemplates : MonoBehaviour
   }
 
   void DestroyRoomAndRestart() {
-    for (int i = 0; i < rooms.Count; i++) {
+    for (int i = rooms.Count - 1 ; i >= 0; i--) {
       RoomScript roomScript = rooms[i].GetComponent<RoomScript>();
+      Debug.Log(i);
       if(!roomScript.HasChildren()) {
+        Debug.Log(i + "children");
         // destroy room
         roomScript.Remove();
-        //Debug.Break();
         Destroy(rooms[i].gameObject);
         rooms.Remove(rooms[i]);
         return;
