@@ -12,11 +12,12 @@ public class RoomScript : MonoBehaviour
     void Awake() {
       parents = new List<GameObject>();
       children = new List<GameObject>();
+      spawnersName = new List<string>();
       // get the spawners
       foreach (Transform child in transform)
       {
-        if(child.name.Constains("SpawnPoint")) {
-          spawners.Add(child.name);
+        if(child.name.Contains("SpawnPoint")) {
+          spawnersName.Add(child.name);
         }
       }
     }
@@ -69,30 +70,30 @@ public class RoomScript : MonoBehaviour
 
     public void Remove() {
       foreach(GameObject parent in parents) {
-        foreach(Transform child in parent.transform) {
-          if(child.CompareTag("SpawnPoint")) {
-            switch(child.name) {
+        foreach(Transform childParent in parent.transform) {
+          if(childParent.CompareTag("SpawnPoint")) {
+            switch(childParent.name) {
               case "SpawnPointTop":
-                if(spawners.Contains("SpawnPointBottom")) {
-                  //RoomSpawner spawner = child.GetComponent<RoomSpawner>();
+                if(spawnersName.Contains("SpawnPointBottom")) {
+                  RoomSpawner spawner = childParent.GetComponent<RoomSpawner>();
                   //spawner.Restart();
                 }
               break;
               case "SpawnPointBottom":
-                if(spawners.Contains("SpawnPointTop")) {
-                  //RoomSpawner spawner = child.GetComponent<RoomSpawner>();
+                if(spawnersName.Contains("SpawnPointTop")) {
+                  RoomSpawner spawner = childParent.GetComponent<RoomSpawner>();
                   //spawner.Restart();
                 }
               break;
               case "SpawnPointLeft":
-                if(spawners.Contains("SpawnPointRight")) {
-                  //RoomSpawner spawner = child.GetComponent<RoomSpawner>();
+                if(spawnersName.Contains("SpawnPointRight")) {
+                  RoomSpawner spawner = childParent.GetComponent<RoomSpawner>();
                   //spawner.Restart();
                 }
               break;
               case "SpawnPointRight":
-                if(spawners.Contains("SpawnPointLeft")) {
-                  //RoomSpawner spawner = child.GetComponent<RoomSpawner>();
+                if(spawnersName.Contains("SpawnPointLeft")) {
+                  RoomSpawner spawner = childParent.GetComponent<RoomSpawner>();
                   //spawner.Restart();
                 }
               break;
