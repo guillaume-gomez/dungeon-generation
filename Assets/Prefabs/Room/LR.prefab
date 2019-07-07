@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5113364415015867161}
-  - component: {fileID: -2094201323058030209}
   - component: {fileID: 6951849341492157837}
   m_Layer: 0
   m_Name: LR
@@ -38,18 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2094201323058030209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763369570378429932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913df463ac792ed48b793f3033fb0f8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6951849341492157837
 MonoBehaviour:
   m_ObjectHideFlags: 0
