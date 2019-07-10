@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RoomScript : MonoBehaviour
 {
-    private List<GameObject> parents;
-    private List<GameObject> children;
-    private List<string> spawnersName;
+    //private List<GameObject> parents;
+    //private List<GameObject> children;
+    //private List<string> spawnersName;
     private RoomTemplates templates;
 
     void Awake() {
-      parents = new List<GameObject>();
+      /*parents = new List<GameObject>();
       children = new List<GameObject>();
       spawnersName = new List<string>();
       // get the spawners
@@ -19,7 +19,7 @@ public class RoomScript : MonoBehaviour
         if(child.name.Contains("SpawnPoint")) {
           spawnersName.Add(child.name);
         }
-      }
+      }*/
     }
 
     void Start() {
@@ -28,7 +28,7 @@ public class RoomScript : MonoBehaviour
       templates.rooms.Add(gameObject);
     }
 
-    public void AddParent(GameObject parent) {
+    /*public void AddParent(GameObject parent) {
       parents.Add(parent);
     }
 
@@ -102,5 +102,5 @@ public class RoomScript : MonoBehaviour
         }
       }
       Debug.Log(gameObject.name);
-    }
+    }*/
 }

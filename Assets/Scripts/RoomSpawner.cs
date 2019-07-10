@@ -76,11 +76,11 @@ public class RoomSpawner : MonoBehaviour
     GameObject childRoom = Instantiate(room, transform.position, room.transform.rotation);
 
     // room is not the final room of a path
-    RoomScript childRoomScript = childRoom.GetComponent<RoomScript>();
+    /*RoomScript childRoomScript = childRoom.GetComponent<RoomScript>();
     GameObject parent = gameObject.transform.parent.gameObject;
     childRoomScript.AddParent(parent);
 
     RoomScript parentRoomScript = parent.GetComponent<RoomScript>();
-    parentRoomScript.AddChild(childRoom);
+    parentRoomScript.AddChild(childRoom); */
   }
 }
