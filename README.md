@@ -1,3 +1,3 @@
 # Dungeon generator
 
-inspired from https://www.youtube.com/watch?v=qAf9axsyijY
+inspired from [this tutorial](https://www.youtube.com/watch?v=qAf9axsyijY)
